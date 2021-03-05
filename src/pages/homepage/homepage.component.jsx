@@ -1,4 +1,5 @@
 import React from "react";
+import "./homepage.styles.scss";
 
 import "../homepage/homepage.styles.scss"
 
