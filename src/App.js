@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
@@ -16,10 +16,10 @@ const HatsPage = () => (
 function App() {
   return (
     <div>
-      <Route exact path="/" component={HomePage} />
-      <Route path="/hats" component={HatsPage} />
-      
-      {/* <HomePage /> */}
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/hats" component={HatsPage} />
+      </Switch>
     </div>
   );
 }
