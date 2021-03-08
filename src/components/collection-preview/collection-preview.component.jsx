@@ -2,11 +2,18 @@ import React from "react";
 
 import "./collection-preview.styles.scss";
 
-const CollectionPreview = () => (
+const CollectionPreview = ({ title, items }) => (
   <div className="collection-preview">
-    <h1 className="title">{title.toUppercase()}</h1>
-      <div className="preview">
-
-      </div>
+    <h1 className="title">{title.toUpperCase()}</h1>
+    <div className="preview">
+      {/* filter() is limiting the number of items displayed in each section to 4 or less */}
+      {items
+        .filter((item, index) => index < 4)
+        .map(item => (
+          <div key={item.id}>{item.name}</div>
+        ))}
+    </div>
   </div>
 )
+
+export default CollectionPreview;
